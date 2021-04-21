@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Role');
     }
 
+    public function isAdminOrEditor()
+    {
+        return $this->hasAnyRole(['admin','editor']);
+    }
+
     public function hasAnyRole($roles)
     {
         return null != $this->roles()->whereIn('name', $roles)->first();

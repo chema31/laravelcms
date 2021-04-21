@@ -18,7 +18,12 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pages = Page::all();
+        if (Auth::user()->isAdminOrEditor()) {
+            $pages = Page::all();
+
+        } else {
+            $pages = Auth::user()->pages()->get();
+        }
 
         return view('admin.pages.index')
             ->with('pages', $pages);
@@ -66,6 +71,10 @@ class PagesController extends Controller
      */
     public function edit(Page $page)
     {
+        if(Auth::user()->cant('update',$page)) {
+            return redirect()->route('pages.index');
+        }
+
         return view('admin.pages.edit')->with('model',$page);
     }
 
@@ -78,6 +87,10 @@ class PagesController extends Controller
      */
     public function update(WorkWithPage $request, Page $page)
     {
+        if(Auth::user()->cant('update',$page)) {
+            return redirect()->route('pages.index');
+        }
+
         $page->fill($request->only(['title','url','content']))->save();
 
         return redirect()->route('pages.index');
@@ -91,6 +104,10 @@ class PagesController extends Controller
      */
     public function destroy(Page $page)
     {
-        //
+        if(Auth::user()->cant('delete',$page)) {
+            return redirect()->route('pages.index');
+        }
+
+        $page->delete();
     }
 }

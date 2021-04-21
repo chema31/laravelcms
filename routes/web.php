@@ -21,7 +21,7 @@ Route::get('/admin', function() {
     return 'you are an admin or an editor';
 })->middleware('admin');
 
-Route::resource('/admin/pages', 'App\Http\Controllers\Admin\PagesController');
+Route::resource('/admin/pages', 'App\Http\Controllers\Admin\PagesController')->middleware('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
