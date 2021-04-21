@@ -44,4 +44,18 @@ class User extends Authenticatable
     public function pages() {
         return $this->hasMany('App\Models\Page');
     }
+
+    public function roles() {
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return null != $this->roles()->whereIn('name', $roles)->first();
+    }
+
+    public function hasRole($role)
+    {
+        return null != $this->roles()->where('name', $role)->first();
+    }
 }
