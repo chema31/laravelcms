@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pages index') }}
+            {{ __('Users index') }}
         </h2>
     </x-slot>
 
@@ -16,31 +16,31 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('pages.create') }}">Create new</a>
-
                     <table class="table-fixed border">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>URL</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Roles</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pages as $page)
+                            @foreach ($model as $user)
                                 <tr>
                                     <td>
-                                        <a href="{{ route('pages.edit', ['page' => $page->id]) }}">
-                                            {{ $page->title }}
+                                        <a href="{{ route('users.edit', ['user' => $user->id]) }}">
+                                            {{ $user->name }}
                                         </a>
                                     </td>
-                                    <td>{{ $page->url }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ implode(', ', $user->roles()->pluck('name')->toArray()) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <td colspan="3">{{ $pages->links() }}</td>
-                        </tr>
+                            <tr>
+                                <td colspan="3">{{ $model->links() }}</td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>

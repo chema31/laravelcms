@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class PagesController extends Controller
 {
@@ -19,10 +20,10 @@ class PagesController extends Controller
     public function index()
     {
         if (Auth::user()->isAdminOrEditor()) {
-            $pages = Page::all();
+            $pages = Page::paginate(Config::get('app.pagination'));
 
         } else {
-            $pages = Auth::user()->pages()->get();
+            $pages = Auth::user()->pages()->paginate(Config::get('app.pagination'));
         }
 
         return view('admin.pages.index')
@@ -49,18 +50,7 @@ class PagesController extends Controller
     {
         Auth::user()->pages()->save(new Page($request->only(['title','url','content'])));
 
-        return redirect()->route('pages.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Page $page)
-    {
-        //
+        return redirect()->route('pages.index')->with('status', 'The page has been created.');
     }
 
     /**
@@ -93,7 +83,7 @@ class PagesController extends Controller
 
         $page->fill($request->only(['title','url','content']))->save();
 
-        return redirect()->route('pages.index');
+        return redirect()->route('pages.index')->with('status', 'The page was updated');
     }
 
     /**
@@ -109,5 +99,6 @@ class PagesController extends Controller
         }
 
         $page->delete();
+        return redirect()->route('pages.index')->with('status', 'The page was deleted');
     }
 }

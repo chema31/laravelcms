@@ -230,4 +230,5 @@ return [
 
     ],
 
+    'pagination' => 25,
 ];

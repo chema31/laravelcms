@@ -16,6 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('pages.index')" :active="request()->routeIs('pages.index')">
+                        {{ __('Pages') }}
+                    </x-nav-link>
+                </div>
+                {{-- @can(\App\Models\User::class) --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Manage Users') }}
+                    </x-nav-link>
+                </div>
+                {{-- @endcan --}}
+
             </div>
 
             <!-- Settings Dropdown -->
