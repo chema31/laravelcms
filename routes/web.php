@@ -26,6 +26,7 @@ Route::get('/admin', function () {
 })->middleware(['admin'])->name('dashboard');
 
 Route::resource('/admin/pages', 'App\Http\Controllers\Admin\PagesController')->except('show')->middleware('admin');
+Route::resource('/admin/posts', 'App\Http\Controllers\Admin\PostsController')->except('show')->middleware('admin');
 Route::resource('/admin/users', 'App\Http\Controllers\Admin\UsersController')->except('show');
 
 require __DIR__.'/auth.php';
