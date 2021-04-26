@@ -18,6 +18,8 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
+            <a href="{{ route('blog') }}">Blog</a>
+
             @include('home.partials.navigation')
 
             <main>
