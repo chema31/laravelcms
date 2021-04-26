@@ -5,7 +5,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <article>
                         <h2>{{ $post->title }}</h2>
-                        <p>Published by {{ $post->user->name }} on {{ $post->published_at }}</p>
+                        <p>Published by {{ $post->user->name }} on {{ $post->present()->formattedPublishedDate }}</p>
                         <p>
                             {!! $post->body  !!}
                         </p>
