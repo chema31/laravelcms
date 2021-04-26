@@ -5,9 +5,9 @@ use Laracasts\Presenter\Presenter;
 
 class PagePresenter extends Presenter
 {
-    public function paddingTitle() {
-        $padding = str_repeat('-', $this->depth * 4 );
+    public function paddedTitle() {
+        $padding = str_repeat('_', $this->depth * 2 );
 
-        return $padding. $this->title;
+        return $padding . $this->title;
     }
 }
