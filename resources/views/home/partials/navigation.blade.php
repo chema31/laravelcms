@@ -11,16 +11,16 @@
             >{{ $page->title }} <span class="caret"></span></a>
 
             <div class="dropdown-menu">
-                <a href="{{ $page->url }}" class="dropdown-item">{{ $page->title }}</a>
+                <a href="/{{ $page->url }}" class="dropdown-item">{{ $page->title }}</a>
 
                 @foreach( $page->children as $child)
-                    <a href="{{ $child->url }}" class="dropdown-item">{{ $child->title }}</a>
+                    <a href="/{{ $child->url }}" class="dropdown-item">{{ $child->title }}</a>
                 @endforeach
             </div>
         </li>
     @else
         <li>
-            <a href="{{ $page->url }}">{{ $page->title }}</a>
+            <a href="/{{ $page->url }}">{{ $page->title }}</a>
         </li>
     @endif
 @endforeach
