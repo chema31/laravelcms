@@ -20,10 +20,10 @@ class PagesController extends Controller
     public function index()
     {
         if (Auth::user()->isAdminOrEditor()) {
-            $pages = Page::defaultOrder()->paginate(Config::get('app.pagination'));
+            $pages = Page::defaultOrder()->withDepth()->paginate(Config::get('app.pagination'));
 
         } else {
-            $pages = Auth::user()->pages()->defaultOrder()->paginate(Config::get('app.pagination'));
+            $pages = Auth::user()->pages()->defaultOrder()->withDepth()->paginate(Config::get('app.pagination'));
         }
 
         return view('admin.pages.index')
@@ -38,7 +38,7 @@ class PagesController extends Controller
     public function create()
     {
         return view('admin.pages.create')->with([
-            'orderPages' => Page::defaultOrder()->get()
+            'orderPages' => Page::defaultOrder()->withDepth()->get()
         ]);
     }
 
@@ -73,7 +73,7 @@ class PagesController extends Controller
         return view('admin.pages.edit')
             ->with([
                 'model' => $page,
-                'orderPages' => Page::defaultOrder()->get()
+                'orderPages' => Page::defaultOrder()->withDepth()->get()
             ]);
     }
 
@@ -115,7 +115,7 @@ class PagesController extends Controller
         return redirect()->route('pages.index')->with('status', 'The page was deleted');
     }
 
-    protected function updatePageOrder(Page $page, Request $request)
+    protected function updatePageOrder(Page $page, $request)
     {
         if( $request->has('order', 'orderPage')) {
             if( $page->id == $request->orderPage ) {
