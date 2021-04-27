@@ -22,6 +22,6 @@ class AccessAdmin
             return $next($request);
         }
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('login');
     }
 }

@@ -18,7 +18,13 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+            <a href="{{ route('blog') }}">Blog</a>
+
+            @include('home.partials.navigation')
+
+            <main>
+                {{ $slot }}
+            </main>
         </div>
     </body>
 </html>

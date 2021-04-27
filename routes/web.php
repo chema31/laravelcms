@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/blog', 'App\Http\Controllers\BlogPostController@index')->name('blog');
+Route::get('/blog/{slug}', 'App\Http\Controllers\BlogPostController@show')->name('blog.show');
 
 /**
  * Administrator routes

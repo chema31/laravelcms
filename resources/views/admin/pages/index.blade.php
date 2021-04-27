@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>
                                         <a href="{{ route('pages.edit', ['page' => $page->id]) }}">
-                                            {{ $page->title }}
+                                            {{ $page->present()->paddedTitle }}
                                         </a>
                                     </td>
                                     <td>{{ $page->url }}</td>
