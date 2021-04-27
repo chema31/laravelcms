@@ -25,4 +25,6 @@
             </div>
         </div>
     </div>
+
+    @include('admin.pages.partials.scripts')
 </x-app-layout>

@@ -27,5 +27,4 @@
     </div>
 
     @include('admin.posts.partials.scripts')
-
 </x-app-layout>

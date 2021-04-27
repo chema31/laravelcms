@@ -2,7 +2,7 @@
     <script>
         (function() {
             document.getElementById('title').addEventListener('blur', function(e) {
-                let slug = document.getElementById('slug');
+                let slug = document.getElementById('url');
 
                 if( slug.value ) {
                     return;
