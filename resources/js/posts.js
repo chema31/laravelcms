@@ -1,5 +1,5 @@
 import Vue from 'vue'
-//import CKEditor from 'ckeditor4-vue';
+import CKEditor from 'ckeditor4-vue';
 import VueTailwind from 'vue-tailwind'
 
 import TDatepicker from 'vue-tailwind/dist/t-datepicker';
@@ -21,7 +21,7 @@ const settings = {
 }
 
 Vue.use(VueTailwind, settings);
-//Vue.use(CKEditor);
+Vue.use(CKEditor);
 
 const app = new Vue({
     el: '#app',
