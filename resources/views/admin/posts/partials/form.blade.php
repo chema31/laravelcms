@@ -21,17 +21,20 @@
 </div>
 <div>
     <label for="published_at">Published Date/Time</label>
-    <t-datepicker :variant="danger" />
+    <t-datepicker name="published_at" id="published_at" value="{{ isset($model)? $model->published_at : date('Y-m-d H:i:s') }}"></t-datepicker>
 </div>
 <div>
     <label for="body">Body</label>
-    <textarea
+    {{--<ckeditor
+            type="inline"
+            tag-name="textarea"
             cols="30"
             rows="10"
             id="body"
             name="body"
             class="px-4 py-3 rounded"
-    >{{ isset($model)? $model->body : '' }}</textarea>
+            value="{{ isset($model)? $model->body : '' }}"
+    ></ckeditor>--}}
 </div>
 <div>
     <label for="excerpt">Excerpt</label>
