@@ -1,25 +1,53 @@
 @csrf
 <div>
     <label for="title">Title</label>
-    <input type="text" id="title" name="title" value="{{ isset($model)? $model->title : '' }}" />
+    <input
+            type="text"
+            id="title"
+            name="title"
+            value="{{ isset($model)? $model->title : '' }}"
+            class="px-4 py-3 rounded-full"
+    />
 </div>
 <div>
     <label for="slug">Slug</label>
-    <input type="text" id="slug" name="slug" value="{{ isset($model)? $model->slug : '' }}" />
+    <input
+            type="text"
+            id="slug"
+            name="slug"
+            value="{{ isset($model)? $model->slug : '' }}"
+            class="px-4 py-3 rounded-full"
+    />
 </div>
 <div>
     <label for="published_at">Published Date/Time</label>
-    <input type="text" id="published_at" name="published_at" value="{{ isset($model)? $model->published_at : '' }}" />
+    <t-datepicker :variant="danger" />
 </div>
 <div>
     <label for="body">Body</label>
-    <textarea cols="30" rows="10" id="body" name="body">{{ isset($model)? $model->body : '' }}</textarea>
+    <textarea
+            cols="30"
+            rows="10"
+            id="body"
+            name="body"
+            class="px-4 py-3 rounded"
+    >{{ isset($model)? $model->body : '' }}</textarea>
 </div>
 <div>
     <label for="excerpt">Excerpt</label>
-    <textarea cols="30" rows="10"id="excerpt" name="excerpt">{{ isset($model)? $model->excerpt : '' }}</textarea>
+    <textarea
+            cols="30"
+            rows="10"
+            id="excerpt"
+            name="excerpt"
+            class="px-4 py-3 rounded"
+    >{{ isset($model)? $model->excerpt : '' }}</textarea>
 </div>
 
 <div>
-    <input type="submit" value="Submit" />
+    <input
+            type="submit"
+            value="Submit"
+            class="px-4 py-3 rounded-full"
+    />
 </div>

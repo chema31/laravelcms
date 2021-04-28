@@ -1,4 +1,4 @@
-/*! tailwindcss v2.1.1 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -10999,6 +10999,38 @@ select {
 }
 
 .cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.disabled\:cursor-auto:disabled {
+  cursor: auto;
+}
+
+.disabled\:cursor-default:disabled {
+  cursor: default;
+}
+
+.disabled\:cursor-pointer:disabled {
+  cursor: pointer;
+}
+
+.disabled\:cursor-wait:disabled {
+  cursor: wait;
+}
+
+.disabled\:cursor-text:disabled {
+  cursor: text;
+}
+
+.disabled\:cursor-move:disabled {
+  cursor: move;
+}
+
+.disabled\:cursor-help:disabled {
+  cursor: help;
+}
+
+.disabled\:cursor-not-allowed:disabled {
   cursor: not-allowed;
 }
 
@@ -42343,6 +42375,38 @@ select {
     cursor: not-allowed;
   }
 
+  .sm\:disabled\:cursor-auto:disabled {
+    cursor: auto;
+  }
+
+  .sm\:disabled\:cursor-default:disabled {
+    cursor: default;
+  }
+
+  .sm\:disabled\:cursor-pointer:disabled {
+    cursor: pointer;
+  }
+
+  .sm\:disabled\:cursor-wait:disabled {
+    cursor: wait;
+  }
+
+  .sm\:disabled\:cursor-text:disabled {
+    cursor: text;
+  }
+
+  .sm\:disabled\:cursor-move:disabled {
+    cursor: move;
+  }
+
+  .sm\:disabled\:cursor-help:disabled {
+    cursor: help;
+  }
+
+  .sm\:disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -73511,6 +73575,38 @@ select {
   }
 
   .md\:cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  .md\:disabled\:cursor-auto:disabled {
+    cursor: auto;
+  }
+
+  .md\:disabled\:cursor-default:disabled {
+    cursor: default;
+  }
+
+  .md\:disabled\:cursor-pointer:disabled {
+    cursor: pointer;
+  }
+
+  .md\:disabled\:cursor-wait:disabled {
+    cursor: wait;
+  }
+
+  .md\:disabled\:cursor-text:disabled {
+    cursor: text;
+  }
+
+  .md\:disabled\:cursor-move:disabled {
+    cursor: move;
+  }
+
+  .md\:disabled\:cursor-help:disabled {
+    cursor: help;
+  }
+
+  .md\:disabled\:cursor-not-allowed:disabled {
     cursor: not-allowed;
   }
 
@@ -104685,6 +104781,38 @@ select {
     cursor: not-allowed;
   }
 
+  .lg\:disabled\:cursor-auto:disabled {
+    cursor: auto;
+  }
+
+  .lg\:disabled\:cursor-default:disabled {
+    cursor: default;
+  }
+
+  .lg\:disabled\:cursor-pointer:disabled {
+    cursor: pointer;
+  }
+
+  .lg\:disabled\:cursor-wait:disabled {
+    cursor: wait;
+  }
+
+  .lg\:disabled\:cursor-text:disabled {
+    cursor: text;
+  }
+
+  .lg\:disabled\:cursor-move:disabled {
+    cursor: move;
+  }
+
+  .lg\:disabled\:cursor-help:disabled {
+    cursor: help;
+  }
+
+  .lg\:disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -135856,6 +135984,38 @@ select {
     cursor: not-allowed;
   }
 
+  .xl\:disabled\:cursor-auto:disabled {
+    cursor: auto;
+  }
+
+  .xl\:disabled\:cursor-default:disabled {
+    cursor: default;
+  }
+
+  .xl\:disabled\:cursor-pointer:disabled {
+    cursor: pointer;
+  }
+
+  .xl\:disabled\:cursor-wait:disabled {
+    cursor: wait;
+  }
+
+  .xl\:disabled\:cursor-text:disabled {
+    cursor: text;
+  }
+
+  .xl\:disabled\:cursor-move:disabled {
+    cursor: move;
+  }
+
+  .xl\:disabled\:cursor-help:disabled {
+    cursor: help;
+  }
+
+  .xl\:disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+
   .xl\:block {
     display: block;
   }
@@ -167024,6 +167184,38 @@ select {
   }
 
   .\32xl\:cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  .\32xl\:disabled\:cursor-auto:disabled {
+    cursor: auto;
+  }
+
+  .\32xl\:disabled\:cursor-default:disabled {
+    cursor: default;
+  }
+
+  .\32xl\:disabled\:cursor-pointer:disabled {
+    cursor: pointer;
+  }
+
+  .\32xl\:disabled\:cursor-wait:disabled {
+    cursor: wait;
+  }
+
+  .\32xl\:disabled\:cursor-text:disabled {
+    cursor: text;
+  }
+
+  .\32xl\:disabled\:cursor-move:disabled {
+    cursor: move;
+  }
+
+  .\32xl\:disabled\:cursor-help:disabled {
+    cursor: help;
+  }
+
+  .\32xl\:disabled\:cursor-not-allowed:disabled {
     cursor: not-allowed;
   }
 
