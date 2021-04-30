@@ -1,7 +1,7 @@
 import Vue from 'vue'
+
 import CKEditor from 'ckeditor4-vue';
 import VueTailwind from 'vue-tailwind'
-
 import TDatepicker from 'vue-tailwind/dist/t-datepicker';
 import Spanish from 'vue-tailwind/dist/l10n/es'
 
@@ -25,4 +25,8 @@ Vue.use(CKEditor);
 
 const app = new Vue({
     el: '#app',
+    data() {
+        return {
+        }
+    }
 });

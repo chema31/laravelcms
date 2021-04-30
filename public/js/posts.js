@@ -27906,7 +27906,10 @@ var settings = {
 vue__WEBPACK_IMPORTED_MODULE_4__.default.use((vue_tailwind__WEBPACK_IMPORTED_MODULE_1___default()), settings);
 vue__WEBPACK_IMPORTED_MODULE_4__.default.use((ckeditor4_vue__WEBPACK_IMPORTED_MODULE_0___default()));
 var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {};
+  }
 });
 })();
 
