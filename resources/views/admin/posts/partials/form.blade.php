@@ -26,9 +26,10 @@
 <div>
     <label for="body">Body</label>
     <ckeditor
+            tag-name="textarea"
+            type="inline"
             id="body"
             name="body"
-            type="inline"
             value="{{ isset($model)? $model->body : '' }}"
     ></ckeditor>
 </div>
